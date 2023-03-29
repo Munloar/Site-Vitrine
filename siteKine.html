@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>MASSEURS KINESITHERAPEUTES conventionnés Vannes</title>
+    <style>
+        * {box-sizing: border-box;}
+
+        /*Style de texte et on colle en haut de page*/
+        body { 
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-top: 89px;
+
+            background-color: black;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/gulf-of-morbihan-g8a02183ac_1920.jpg");
+            /*background-image: url('images/gulf-of-morbihan-g8a02183ac_1920.jpg');*/
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+
+        }
+
+        /*Info bandeau*/
+        .header {
+            overflow: hidden;
+            background-color: #37103A;
+            padding: 20px 10px;
+            position: fixed;
+            width: 100%;
+        }
+
+        /*Positionnement du nom du site*/
+        .header a {
+            float: left;
+            color: #fff;
+            text-align: center;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 18px; 
+            line-height: 25px;
+            border-radius: 4px;
+        }
+
+        /*Maintient du bandeau en haut de l'écran*/
+        .header{
+            top: 0;
+        }
+
+        /*Paramètre du titre*/
+        .header a.siteName {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        /*Changement lorsque la souris passe au dessus d'un raccourcis*/
+        .header a:hover {
+            background-color: #F87700;
+            color: white;
+        }
+
+        /*Positionnement des raccourcis*/
+        .header-right {
+            float: right;
+        }
+
+        /*Ajuste la taille de l'écran*/
+        @media screen and (max-width: 500px) {
+            .header a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+            
+            .header-right {
+                float: none;
+            }
+        }
+
+        .contenant {
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+        }
+
+        /*----------------------------------------------------Tout le contenue de la page d'accueil----------------------------------------------------*/
+        .contenantAccueil{
+            padding: 50px 10%;
+            visibility: visible; /*hidden*/
+        }
+
+        /*image salle1*/
+        #accueilDiv1{
+            width: 35%; 
+            height: 30%;
+            float:left; 
+            /*border: solid red;*/
+        }
+
+        /*texte 1*/
+        #accueilDiv2{
+            width: 65%; 
+            height: 100%;
+            float: right; 
+            /*border: solid red;*/
+            padding-left: 15%;
+            padding-top: 5%;
+            padding-bottom: 2%;
+            color: #fff;
+            font-size: 20px;
+        }
+
+        /*image hall*/
+        #accueilDiv3{
+            width: 35%; 
+            height: 40%;
+            float: right; 
+            /*border: solid red;*/
+            margin-right: 10%;
+        }
+
+        /*image salle2*/
+        #accueilDiv4{
+            width: 35%; 
+            height: 40%;
+            float:left; 
+            /*border: solid red;*/
+            margin-top: 1%;
+        }
+
+        /*texte 2*/
+        #accueilDiv5{
+            width: 65%; 
+            height: 40%;
+            float: right; 
+            /*border: solid red;*/
+            padding-left: 20%;
+            padding-top: 2%;
+            color: #fff;
+            font-size: 20px;
+        }
+
+        /*----------------------------------------------------css page info----------------------------------------------------*/
+        .contenantInfo{
+            width: 100%;
+            padding-left: 10%;
+            visibility: hidden;
+            position: absolute;
+        }
+
+        /*texte nom1*/
+        #infoDiv3{
+            width: 30%; 
+            height: 30%;
+            float:left; 
+            color: #F87700;
+        }
+
+        /*texte nom2*/
+        #infoDiv4{
+            width: 16%; 
+            height: 30%;
+            float:right;
+            margin-right: 11%;
+            color: #F87700; 
+        }
+
+        /*texte*/
+        #infoDiv5{
+            width: 50%;
+            height: 70%;
+            color: #fff;
+            font-size: 23px;
+            text-align: center;
+            margin-top: 10%;
+            margin-left: 20%;
+        }
+
+        /*notice*/
+        #infoDiv6{
+            position: absolute;
+            width: 15%;
+            z-index: 4;
+            margin-top: 20%;
+        }
+
+        /*image machine*/
+        #infoDiv7{
+            position: absolute;
+            width: 15%;
+            /*margin-right: 10%;*/
+            z-index: 4;
+            margin-top: 20%;
+            margin-left: 66%;
+            
+        }
+
+        /*----------------------------------------------------css page localisation----------------------------------------------------*/
+        .contenantLocalisation{
+            padding-left: 10%;
+            visibility: hidden;
+            position: absolute;
+        }
+
+        /*texte adresse*/
+        #locaDiv1{
+            padding-left: 30%;
+            color: #fff;
+        }
+
+        /*image map*/
+        #locaDiv2{
+            width: 50%;
+            float:left;
+            margin-top: 5%;
+        }
+
+        /*image plaque*/
+        #locaDiv3{
+            width: 40%;
+            float:right; 
+            margin-right: 5%;
+            margin-top: 6%;
+        }
+
+        /*----------------------------------------------------css page rendez-vous------------------------------------*/
+        .contenantRendezvous{
+            width: 100%;
+            padding-left: 5%;
+            padding-top: 5%;
+            visibility: hidden;
+            position: absolute;
+            color: #fff;
+            font-size: 20px;
+            /*border: solid red;*/
+        }
+
+        /*texte contact*/
+        #renDiv1{
+            width: 25%;
+            float:left; 
+            margin-top: 5%;
+            margin-left: 5%;
+            /*border: solid red;*/
+        }
+
+        /*texte horaires*/
+        #renDiv2{
+            width: 25%;
+            float:right; 
+            margin-top: 5%;
+            /*border: solid red;*/
+        }
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="contenant">
+        <!-- Page d'accueil -->
+        <div class="contenantAccueil">
+            <div id="accueilDiv1">
+                <img src="images/20230123_111243.jpg" width="100%" height="100%"/>
+            </div>
+            <div id="accueilDiv2">
+                <p>MASSEUR - KINESITHERAPEUTE conventionné sur Vannes.</p>
+                <p>Séance individuelle de 30minutes.</p>
+            </div>
+            <div id="accueilDiv3">
+                <img src="images/20230123_111430.jpg" width="100%" height="100%"/>
+            </div>
+            <div id="accueilDiv4">
+                <img src="images/20230123_111811.jpg" width="100%" height="100%"/>
+            </div>
+            <div id="accueilDiv5">
+                <p>Nous sommes 2 kinés :</p>
+                <p style="padding-left: 10%;">Sophie Garin Corvaisier</p>
+                <p style="padding-left: 10%;">Maxime Malard</p>
+            </div>
+        </div>
+
+        <!-- Page d'informations -->
+        <div class="contenantInfo">
+
+            <div id="infoDiv6">
+                <img src="images/20230202_202245.jpg" width="100%" height="100%"/>
+            </div>
+
+            <div id="infoDiv7">
+                <img src="images/20230123_111007.jpg" width="100%" height="100%"/>
+            </div>
+            <div id="infoDiv3">
+                <h1>GARIN CORVAISIER Sophie</h1>
+            </div>
+            <div id="infoDiv4">
+                <h1>MALARD Maxime</h1>
+            </div>
+
+            <div id="infoDiv5">
+                <p>Masseur kinésithérapeute D.E</p>
+                <p>Endermologie dispensée par l’appareil Cellu M6 Alliance Médical</p>
+                <p>Spécialisée dans la prise en charge du cancer du sein</p>
+                <p>Traitement des cicatrices récentes ou anciennes</p>
+                <p>Stimuler la circulation lymphatique et veineuse</p>
+                <p>Rééducation fonctionnelle</p>
+                <p>Réentrainement à l’effort : cardio ,  pneumo</p>
+                <p>Rhumatologie</p>
+                <p>Traumatologie</p>
+                <p>Neurologie</p>
+                <p>Gériatrie</p>
+            </div>
+
+        </div>
+
+        <!-- Page Localisation -->
+        <div class="contenantLocalisation">
+            <div id="locaDiv1">
+                <h1>25 rue du Colonel Maury - 56000 VANNES</h1>
+            </div>
+            <div id="locaDiv2">
+                <img src="images/map.PNG" width="100%" height="100%"/>
+            </div>
+            <div id="locaDiv3">
+                <img src="images/plaque.PNG" width="100%" height="100%"/>
+            </div>
+        </div>
+
+        <!-- Page Rendez-Vous-->
+        <div class="contenantRendezvous">
+            <div id="renDiv1">
+                <h1>Contact</h1>
+                <h2 style="padding-left: 10%;">Tél: 02 97 01 31 31</h2>
+            </div>
+            <div id="renDiv2">
+                <h1>Horaires:</h1>
+                <h2 style="padding-left: 10%;">LUN : 8h-19h30</h2>
+                <h2 style="padding-left: 10%;">MAR : 8h-19h30</h2>
+                <h2 style="padding-left: 10%;">MER : 8h-19h30</h2>
+                <h2 style="padding-left: 10%;">JEU : 8h-19h30</h2>
+                <h2 style="padding-left: 10%;">VEN : 8h-19h30</h2>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Info du bandeau -->
+    <div class="header">
+        <div class="contenant">
+            <a href="#default" class="siteName">MASSEURS KINESITHERAPEUTES conventionnés</a>
+            <div class="header-right">
+                <a class="active" href="#Accueil" id="accueil">Accueil</a>
+                <a href="#Informations" id="info">Informations</a>
+                <a href="#Localisation" id="loca">Localisation</a>
+                <a href="#Rendez-vous" id="rend">Prise de rendez-vous</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        $('#accueil').on('click', function(){
+            //$('body').css('background-image', 'url("images/gulf-of-morbihan-g8a02183ac_1920.jpg")');
+            $('body').css('background-image','linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/gulf-of-morbihan-g8a02183ac_1920.jpg"');
+            $('.contenantAccueil').css('visibility', 'visible');
+            $('.contenantInfo').css('visibility', 'hidden');
+            $('.contenantLocalisation').css('visibility', 'hidden');
+            $('.contenantRendezvous').css('visibility', 'hidden');
+        });
+
+        $('#info').on('click', function(){
+            $('body').css('background-image','linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/20230121_131647.jpg"');
+            $('.contenantAccueil').css('visibility', 'hidden');
+            $('.contenantInfo').css('visibility', 'visible');
+            $('.contenantLocalisation').css('visibility', 'hidden');
+            $('.contenantRendezvous').css('visibility', 'hidden');
+        });
+
+        $('#loca').on('click', function(){
+            $('body').css('background-image','linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/localisation.PNG"');
+            $('.contenantAccueil').css('visibility', 'hidden');
+            $('.contenantInfo').css('visibility', 'hidden');
+            $('.contenantLocalisation').css('visibility', 'visible');
+            $('.contenantRendezvous').css('visibility', 'hidden');
+            
+        });
+
+        $('#rend').on('click', function(){
+            $('body').css('background-image','linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/20230121_131627.jpg"');
+            $('.contenantAccueil').css('visibility', 'hidden');
+            $('.contenantInfo').css('visibility', 'hidden');
+            $('.contenantLocalisation').css('visibility', 'hidden');
+            $('.contenantRendezvous').css('visibility', 'visible');
+        });
+
+    </script>
+
+</body>
+</html>
